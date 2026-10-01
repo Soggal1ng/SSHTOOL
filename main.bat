@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 if exist ssh.log del ssh.log
+if exist ssh.rc del ssh.rc
 :: basic checks for required tools
 where msfconsole >nul 2>&1
 if %errorlevel% == 0 (
@@ -24,7 +25,7 @@ if %errorlevel% == 0 (
     timeout /t 2 >nul
     exit /b 1
 )
-title eat tom pearls nuts dick bit
+title SSH tool
 color 0a
 echo =====================================================================
 echo  Author:              Soggal1ng
